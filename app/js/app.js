@@ -3,11 +3,11 @@
  */
 'use strict';
 
-angular.module('farmaApp', [ 'farmaApp.controllers']).
+angular.module('FarmaApp', []).
 
-config(['$routeProvider', function($routeProvider,FarmaCtrl) {
+config(['$routeProvider', function($routeProvider,FarmaController) {
 
-    $routeProvider.when('/', { controller: 'FarmaCtrl'});
+    $routeProvider.when('/', { controller: 'FarmaController'});
 
     $routeProvider.otherwise({redirectTo: '/'});
 

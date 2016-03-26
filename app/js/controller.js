@@ -1,13 +1,15 @@
-/**
- * Created by pablo on 3/25/16.
- */
-'use strict';
 
 
-var farmaCtrlModule =  angular.module('farmaApp.controllers', []);
+angular.module('FarmaApp', ['ui.bootstrap'])
+    .controller('FarmaController', function($scope) {
+        var farma = this;
+        farma.appName = "Caso de Estudio Phischel-FarmaTica"
+        farma.todos = [
+            {text:'learn angular', done:true},
+            {text:'build an angular app', done:false}];
+        $scope.isCollapsed = false;
 
-farmaCtrlModule.controller('FarmaCtrl', function($rootScope, $scope, $location,$routeParams) {
 
-    $scope.appName="Caso de Estudio Phischel-FarmaTica";
+    });
 
-});
+

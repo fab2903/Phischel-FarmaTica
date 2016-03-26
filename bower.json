@@ -9,6 +9,8 @@
     "angular-route": "~1.4.0",
     "angular-loader": "~1.4.0",
     "angular-mocks": "~1.4.0",
+    "angular-bootstrap":"~1.2.5",
+    "bootstrap": "~3.3.6",
     "html5-boilerplate": "~5.2.0"
   }
 }
