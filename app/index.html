@@ -1,41 +1,40 @@
 <!DOCTYPE html>
-<html lang="es" ng-app="FarmaApp">
+<html ng-app="app">
 <head>
-    <meta charset="UTF-8">
-    <title>Caso de estudio Phischel-FarmaTica</title>
-    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/farma.css">
-    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <meta charset="utf-8" />
+    <title>AngularJS User Registration and Login Example</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link href="app-content/app.css" rel="stylesheet" />
 </head>
-<body ng-controller="FarmaController as farma">
-     <h1>Bienvenido a  {{farma.appName}} </h1>
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <div class="container">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+                <div ng-view></div>`
+            </div>
+        </div>
+    </div>
+</div>
 
-     <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Toggle collapse</button>
-     <hr>
-     <div uib-collapse="isCollapsed">
-         <div class="well well-lg">Some content</div>
-     </div>
+    <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="//code.angularjs.org/1.2.20/angular.js"></script>
+    <script src="//code.angularjs.org/1.2.20/angular-route.js"></script>
+    <script src="//code.angularjs.org/1.2.13/angular-cookies.js"></script>
 
-     {{farma.appName}}
-     <h1>Hello World Sample Program</h1>
-     </div>
-     <div>
-         <form class="form-horizontal" role="form">
-             <div class="form-group">
-                 <label class="col-md-2 control-label">Type Your Name</label>
-                 <div class="col-md-4">
-                     <input type="text" ng-model="name"  class="form-control" value="{{name}}"/>
-                     <span>Hello {{ name }}!</span>
-                 </div>
-             </div>
-         </form>
-     <script src="bower_components/angular/angular.js"></script>
-     <script src="bower_components/angular-route/angular-route.js"></script>
-     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-     <script src="js/app.js"></script>
-     <script src="js/controller.js"></script>
+    <script src="app.js"></script>
+    <script src="app-services/authentication.service.js"></script>
+    <script src="app-services/flash.service.js"></script>
 
+    <!-- Real user service that uses an api -->
+    <!-- <script src="app-services/user.service.js"></script> -->
+
+    <!-- Fake user service for demo that uses local storage -->
+    <script src="app-services/user.service.local-storage.js"></script>
+
+    <script src="home/home.controller.js"></script>
+    <script src="login/login.controller.js"></script>
+    <script src="register/register.controller.js"></script>
 </body>
 </html>
